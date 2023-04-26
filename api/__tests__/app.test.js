@@ -6,8 +6,8 @@ describe("/non-existent-or-misspelt-endpoint", () => {
     return request(app)
       .get("/invalid-path")
       .expect(404)
-      .then(({ body }) => {
-        expect(body.msg).toBe("Not found - this path does not exist");
+      .then(({ body: { msg } }) => {
+        expect(msg).toBe("Not found - this path does not exist");
       });
   });
 });
