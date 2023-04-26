@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ExamCard from "./ExamCard";
 import { getExamData } from "../utils/api";
+import { formatDates } from "../utils/utilities";
 
 function ExamList() {
   const [loading, setLoading] = useState(false);
@@ -14,8 +15,8 @@ function ExamList() {
     setError(false);
     getExamData()
       .then((examsFromApi) => {
-        console.log(examsFromApi); // Remember to remove later!
-        setExams(examsFromApi);
+        const formattedExams = formatDates(examsFromApi);
+        setExams(formattedExams);
         setLoading(false);
       })
       .catch((err) => {
@@ -101,9 +102,13 @@ function ExamList() {
         </>
       )}
       <ul>
-        {filterExams().map((exam) => {
-          return <ExamCard exam={exam} key={exam.id} />;
-        })}
+        {filterExams()
+          .sort(function (a, b) {
+            return new Date(a.formattedDate) - new Date(b.formattedDate);
+          })
+          .map((exam) => {
+            return <ExamCard exam={exam} key={exam.id} />;
+          })}
       </ul>
     </div>
   );
