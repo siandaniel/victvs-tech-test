@@ -1,7 +1,7 @@
-function ExamCard() {
+function ExamCard({ exam }) {
   return (
     <li className="exam-card">
-      <p>Exam Card</p>
+      <p>Exam Card for exam number {exam.id}</p>
     </li>
   );
 }

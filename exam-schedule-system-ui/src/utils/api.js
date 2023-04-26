@@ -1,9 +1,7 @@
-const axios = require("axios");
+import axios from "axios";
 
-const getExamData = () => {
+export const getExamData = () => {
   return axios.get("http://localhost:4000/api/data").then(({ data }) => {
     return data.examData;
   });
 };
-
-module.exports = getExamData;
