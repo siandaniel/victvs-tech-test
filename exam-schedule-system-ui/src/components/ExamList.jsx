@@ -23,6 +23,10 @@ function ExamList() {
       });
   }, []);
 
+  useEffect(() => {
+    setFilterValue("");
+  }, [filterType]);
+
   function handleFilterTypeChange(event) {
     setFilterType(event.target.value);
   }
@@ -43,7 +47,9 @@ function ExamList() {
         (exam) => exam.CandidateName.toLowerCase() === filterValue.toLowerCase()
       );
     } else if (filterType === "Date" && filterValue !== "") {
-      filteredExams = filteredExams.filter((exam) => exam.Date === filterValue);
+      filteredExams = filteredExams.filter(
+        (exam) => exam.Date.substring(0, 10) === filterValue
+      );
     } else if (filterType === "LocationName" && filterValue !== "") {
       filteredExams = filteredExams.filter(
         (exam) => exam.LocationName.toLowerCase() === filterValue.toLowerCase()
@@ -81,21 +87,11 @@ function ExamList() {
         <option value="Date">Date</option>
         <option value="LocationName">Location</option>
       </select>
-      {filterType === "Date" && (
+      {filterType !== "" && (
         <>
-          <label htmlFor="filter-value">Value:</label>
-          <p>Date!</p>
-          {/* <input
-            id="filter-value"
-            type="text"
-            value={filterValue}
-            onChange={handleFilterValueChange}
-          /> */}
-        </>
-      )}
-      {filterType !== "" && filterType !== "Date" && (
-        <>
-          <label htmlFor="filter-value">Value:</label>
+          <label htmlFor="filter-value">
+            {filterType === "Date" ? "DD/MM/YYYY:" : ""}
+          </label>
           <input
             id="filter-value"
             type="text"

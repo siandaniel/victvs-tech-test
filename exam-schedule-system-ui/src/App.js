@@ -1,12 +1,12 @@
 import "./App.css";
-import ExamsContainer from "./components/ExamsContainer";
 import Header from "./components/Header";
+import ExamList from "./components/ExamList";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <ExamsContainer />
+      <ExamList />
     </div>
   );
 }
