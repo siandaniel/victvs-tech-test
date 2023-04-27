@@ -13,6 +13,26 @@ const Footer = () => {
       >
         Light / Dark Mode
       </button>
+      <nav className="links">
+        <div className="link-group">
+          <img
+            className="link-icon"
+            src="https://www.victvs.co.uk/wp-content/uploads/2020/05/512x512new.png"
+            alt="VICTVS logo"
+          />
+          <a href="https://www.victvs.co.uk/">VICTVS</a>
+        </div>
+        <div className="link-group">
+          <img
+            className="link-icon"
+            src="https://www.svgrepo.com/show/144030/linkedin-square-logo.svg"
+            alt="LinkedIn Icon"
+          />
+          <a href="https://www.linkedin.com/company/victvs/?originalSubdomain=uk">
+            LinkedIn
+          </a>
+        </div>
+      </nav>
     </footer>
   );
 };
