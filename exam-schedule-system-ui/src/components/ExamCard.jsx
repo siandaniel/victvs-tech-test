@@ -1,7 +1,7 @@
 function ExamCard({ exam }) {
   return (
     <li className="exam-card">
-      <h3>{exam.Title}</h3>
+      <h2>{exam.Title}</h2>
       <p>{exam.Description}</p>
       <p>{exam.Candidateid}</p>
       <p>{exam.CandidateName}</p>

@@ -1,11 +1,90 @@
+@font-face {
+  font-family: "Abel";
+  src: url("./assets/fonts/Abel-Regular.ttf") format("truetype");
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-align: center;
+  font-family: "Abel";
+}
+
+h1 {
+  font: normal normal bold 40px/40px "Abel";
+  margin: 20px;
+  color: white;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font: normal normal bold 30px/30px "Abel";
+  margin: 0 20px 20px 20px;
+  color: white;
+  letter-spacing: 2px;
+}
+
+nav {
+  height: 5vh;
+  background-color: black;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
+}
+
+header {
+  color: white;
+  width: 100%;
+  min-height: 180px;
+  background-image: url("./assets/images/remote-exam.jpg");
+  background-size: cover;
+  z-index: 0;
+}
+
+#victvs-logo {
+  opacity: 0.4;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  height: 180px;
+  width: 320px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.exam-list {
+  padding: 20px;
+  background-color: rgb(40, 40, 40);
+}
+
+.filter {
+  margin: 20px;
+}
+
+label {
+  color: white;
+  margin: 10px;
+}
+
+select,
+input {
+  margin: 10px;
 }
 
 .exam-card {
-  margin: 10px;
+  margin: 20px;
+  padding: 15px;
   list-style: none;
   border: 1px solid grey;
+  background-color: grey;
+  color: white;
+}
+
+@media (min-width: 550px) {
+  #victvs-logo {
+    left: 0;
+    transform: none;
+  }
 }

@@ -1,11 +1,10 @@
-import Nav from "./Nav";
+import victvsLogo from "../assets/images/victvs-logo.png";
 
 function Header() {
   return (
-    <div className="header">
-      <Nav />
-      <h1>Header</h1>
-    </div>
+    <header>
+      <img src={victvsLogo} id="victvs-logo" alt="VICTVS logo" />
+    </header>
   );
 }
 

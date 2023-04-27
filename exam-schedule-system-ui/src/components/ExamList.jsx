@@ -74,33 +74,35 @@ function ExamList() {
   }
 
   return (
-    <div className="exam-list">
-      <h2>Exam List</h2>
-      <label htmlFor="filter-type">Filter by:</label>
-      <select
-        id="filter-type"
-        value={filterType}
-        onChange={handleFilterTypeChange}
-      >
-        <option value="">All Exams</option>
-        <option value="Candidateid">Candidate ID</option>
-        <option value="CandidateName">Candidate Name</option>
-        <option value="Date">Date</option>
-        <option value="LocationName">Location</option>
-      </select>
-      {filterType !== "" && (
-        <>
-          <label htmlFor="filter-value">
-            {filterType === "Date" ? "DD/MM/YYYY:" : ""}
-          </label>
-          <input
-            id="filter-value"
-            type="text"
-            value={filterValue}
-            onChange={handleFilterValueChange}
-          />
-        </>
-      )}
+    <section className="exam-list">
+      <h1>MY EXAMS</h1>
+      <div class="filter">
+        <label htmlFor="filter-type">Filter by:</label>
+        <select
+          id="filter-type"
+          value={filterType}
+          onChange={handleFilterTypeChange}
+        >
+          <option value="">All Exams</option>
+          <option value="Candidateid">Candidate ID</option>
+          <option value="CandidateName">Candidate Name</option>
+          <option value="Date">Date</option>
+          <option value="LocationName">Location</option>
+        </select>
+        {filterType !== "" && (
+          <>
+            <label htmlFor="filter-value">
+              {filterType === "Date" ? "DD/MM/YYYY:" : ""}
+            </label>
+            <input
+              id="filter-value"
+              type="text"
+              value={filterValue}
+              onChange={handleFilterValueChange}
+            />
+          </>
+        )}
+      </div>
       <ul>
         {filterExams()
           .sort(function (a, b) {
@@ -110,7 +112,7 @@ function ExamList() {
             return <ExamCard exam={exam} key={exam.id} />;
           })}
       </ul>
-    </div>
+    </section>
   );
 }
 
