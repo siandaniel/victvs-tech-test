@@ -16,6 +16,9 @@ html {
   min-height: 100vh;
   background-color: rgb(40, 40, 40);
   background-image: url("./assets/images/exam-hall.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 h1 {
