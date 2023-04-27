@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ExamCard from "./ExamCard";
 import { getExamData } from "../utils/api";
 import { formatDates } from "../utils/utilities";
+import upIcon from "../assets/images/upIcon.jpeg";
 
 function ExamList() {
   const [loading, setLoading] = useState(false);
@@ -9,6 +10,7 @@ function ExamList() {
   const [filterType, setFilterType] = useState("");
   const [filterValue, setFilterValue] = useState("");
   const [exams, setExams] = useState([]);
+  const [showButton, setShowButton] = useState();
 
   useEffect(() => {
     setLoading(true);
@@ -59,10 +61,26 @@ function ExamList() {
     return filteredExams;
   }
 
+  useEffect(() => {
+    const handleScrollButtonVisibility = () => {
+      window.pageYOffset > 300 ? setShowButton(true) : setShowButton(false);
+    };
+
+    window.addEventListener("scroll", handleScrollButtonVisibility);
+
+    return () => {
+      window.removeEventListener("scroll", handleScrollButtonVisibility);
+    };
+  }, []);
+
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   if (loading) {
     return (
       <img
-        src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921"
+        src="https://media.tenor.com/On7kvXhzml4AAAAj/loading-gif.gif"
         alt="loading bar"
         id="loading-icon"
       />
@@ -76,7 +94,7 @@ function ExamList() {
   return (
     <section className="exam-list">
       <h1>MY EXAMS</h1>
-      <div class="filter">
+      <div className="filter">
         <label htmlFor="filter-type">Filter by:</label>
         <select
           id="filter-type"
@@ -112,6 +130,13 @@ function ExamList() {
             return <ExamCard exam={exam} key={exam.id} />;
           })}
       </ul>
+      {showButton && (
+        <div className={"scrollToTop"}>
+          <button id="to-top-button" onClick={handleScrollToTop}>
+            <img src={upIcon} alt="scroll to top button" />
+          </button>
+        </div>
+      )}
     </section>
   );
 }
