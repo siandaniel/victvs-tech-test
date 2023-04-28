@@ -65,6 +65,10 @@ b {
   border-radius: 50%;
 }
 
+.error-message {
+  margin-top: 50px;
+}
+
 /* Header and Nav */
 
 header {

@@ -5,6 +5,7 @@ import Nav from "./components/Nav";
 import Home from "./components/Home";
 import ExamList from "./components/ExamList";
 import Footer from "./components/Footer";
+import ErrorPage from "./components/ErrorPage";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Header />
       <Nav />
       <Routes>
+        <Route path="*" element={<ErrorPage />} />
         <Route path="/" element={<Home />}></Route>
         <Route path="/myexams" element={<ExamList />}></Route>
       </Routes>
