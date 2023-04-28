@@ -3,6 +3,8 @@
   src: url("./assets/fonts/Abel-Regular.ttf") format("truetype");
 }
 
+/* Setup */
+
 * {
   margin: 0;
   padding: 0;
@@ -38,13 +40,32 @@ b {
   text-transform: uppercase;
 }
 
-nav {
-  height: 7vh;
-  background-color: rgb(3, 3, 3);
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+#loading-icon {
+  z-index: 999;
+  width: 30vw;
+  margin: 100px auto 100px auto;
 }
+
+#to-top-button {
+  background-color: rgba(1, 1, 1, 0);
+  width: 55px;
+  height: 55px;
+  border: 1px solid grey;
+  border-radius: 50%;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+#to-top-button img {
+  width: 53px;
+  height: 53px;
+  border-radius: 50%;
+}
+
+/* Header and Nav */
 
 header {
   width: 100%;
@@ -65,11 +86,26 @@ header {
   transform: none;
 }
 
-#loading-icon {
-  z-index: 999;
-  width: 30vw;
-  margin: 100px auto 100px auto;
+.upper-nav {
+  min-height: 40px;
+  background-color: rgb(3, 3, 3);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
+
+.upper-nav a {
+  height: 100%;
+  text-decoration: none;
+  padding: 10px;
+  flex-basis: 33.33%;
+}
+
+.upper-nav a:hover {
+  background-color: rgb(57, 57, 57);
+}
+
+/* Exam List */
 
 .exam-list {
   min-height: 100vh;
@@ -130,24 +166,7 @@ button {
   display: none;
 }
 
-#to-top-button {
-  background-color: rgba(1, 1, 1, 0);
-  width: 55px;
-  height: 55px;
-  border: 1px solid grey;
-  border-radius: 50%;
-  margin: 0;
-  padding: 0;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-}
-
-#to-top-button img {
-  width: 53px;
-  height: 53px;
-  border-radius: 50%;
-}
+/* Footer */
 
 footer {
   width: 90vw;
@@ -217,6 +236,15 @@ a {
   #victvs-logo {
     width: 100vw;
   }
+  h1 {
+    font-size: 40px;
+  }
+  nav a {
+    max-height: 100%;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 12px;
+  }
   .map {
     height: 100px;
   }
@@ -250,6 +278,9 @@ a {
 }
 
 @media (min-width: 900px) {
+  .upper-nav a {
+    flex-basis: 20%;
+  }
   b {
     display: block;
   }

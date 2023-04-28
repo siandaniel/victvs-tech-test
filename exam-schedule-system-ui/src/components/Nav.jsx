@@ -1,9 +1,15 @@
 function Nav() {
   return (
-    <nav>
-      <p>Home</p>
-      <p>My Exams</p>
-      <p>Exam Locations</p>
+    <nav className="upper-nav">
+      <a href="#victvs-logo">Home</a>
+      <a href="#exam-list">My Exams</a>
+      <a
+        href="https://www.victvs.co.uk/about-victvs/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        About Us
+      </a>
     </nav>
   );
 }
