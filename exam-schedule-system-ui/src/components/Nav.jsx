@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 function Nav() {
   return (
     <nav className="upper-nav">
-      <a href="#victvs-logo">Home</a>
-      <a href="#exam-list">My Exams</a>
+      <Link to="/">Home</Link>
+      <Link to="/myexams">My Exams</Link>
       <a
         href="https://www.victvs.co.uk/about-victvs/"
         target="_blank"

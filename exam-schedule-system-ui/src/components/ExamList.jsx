@@ -92,7 +92,7 @@ function ExamList() {
   }
 
   return (
-    <section className="exam-list" id="exam-list">
+    <section className="exam-room-container">
       <h1>EXAM SCHEDULE</h1>
       <div className="filter">
         <label htmlFor="filter-type">Filter by:</label>

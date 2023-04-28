@@ -15,7 +15,7 @@
 }
 
 html {
-  min-height: 100vh;
+  min-height: 80vh;
   background-color: rgb(40, 40, 40);
   background-image: url("./assets/images/exam-hall.jpg");
   background-attachment: fixed;
@@ -105,10 +105,31 @@ header {
   background-color: rgb(57, 57, 57);
 }
 
+/* Home */
+
+.demo-container {
+  margin-bottom: 20px;
+}
+
+.demo-details {
+  margin: 30px;
+}
+
+li {
+  list-style-position: inside;
+  margin: 10px;
+}
+
+#screenshot {
+  width: 70%;
+  border: solid 1px white;
+  margin-top: 30px;
+}
+
 /* Exam List */
 
-.exam-list {
-  min-height: 100vh;
+.exam-room-container {
+  min-height: 70vh;
   padding: 20px;
   background-attachment: fixed;
   background-size: cover;
@@ -202,7 +223,7 @@ a {
 
 /* Light Mode */
 
-.light-mode .exam-list {
+.light-mode .exam-room-container {
   background-image: url("./assets/images/exam-hall-light.jpg");
 }
 
@@ -214,7 +235,8 @@ a {
 .light-mode h1,
 .light-mode em,
 .light-mode p,
-.light-mode label {
+.light-mode label,
+.light-mode li {
   color: rgb(3, 3, 3);
 }
 
@@ -228,6 +250,10 @@ a {
 
 .light-mode button {
   border: 2px solid grey;
+}
+
+.light-mode #screenshot {
+  border: 1px solid rgb(40, 40, 40);
 }
 
 /* Responsive Design */
@@ -256,6 +282,27 @@ a {
     width: 10vw;
     margin: 150px auto 150px auto;
   }
+  .demo-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px;
+  }
+  .demo-details {
+    width: 40vw;
+  }
+  .demo-details h2 {
+    text-align: left;
+    margin-left: 0;
+  }
+  .demo-details p,
+  .demo-details li {
+    text-align: left;
+    margin-left: 0;
+  }
+  #screenshot {
+    width: 50vw;
+  }
   .exam-card {
     flex-direction: row;
     justify-content: space-evenly;
@@ -278,8 +325,27 @@ a {
 }
 
 @media (min-width: 900px) {
+  .exam-room-container {
+    min-height: 60vh;
+  }
   .upper-nav a {
     flex-basis: 20%;
+  }
+  .demo-details {
+    width: 50vw;
+  }
+  .demo-details h2 {
+    font-size: 40px;
+    text-align: left;
+  }
+  .demo-details p,
+  .demo-details li {
+    font-size: 20px;
+    text-align: left;
+  }
+  #screenshot {
+    max-height: 60vh;
+    width: auto;
   }
   b {
     display: block;
@@ -300,5 +366,11 @@ a {
   }
   .city-img {
     display: none;
+  }
+}
+
+@media (min-width: 900px) and (orientation: portrait) {
+  #screenshot {
+    width: 50vw;
   }
 }
